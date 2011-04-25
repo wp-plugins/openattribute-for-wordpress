@@ -1,12 +1,11 @@
 === Plugin Name ===
 Contributors: openattribute
-Donate link: http://openattribute.com/
-Tags: attribution
+Tags: attribution, licensing, creative commons, openattribute, mozilla, drumbeat
 Requires at least: 3.0.0
-Tested up to: 3.0
+Tested up to: 3.1
 Stable tag: 0.9
 
-Allows a user to add licensing and attribution information into a blog post / WordPress powered site.
+Allows a user to add licensing and attribution information into a blog post / WordPress powered site. This plugin is an part of the OpenAttribute project which is part of Mozilla Drumbeat.
 
 == Description ==
 
