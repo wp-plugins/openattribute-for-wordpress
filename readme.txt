@@ -23,9 +23,11 @@ e.g.
 
 == Changelog ==
 
+= 0.93 =
+* Initial bug fixes released.
+
 = 0.9 =
 * This is the first version we have distributed - no changes have been made post this initial release as of yet.
-
 == Screenshots ==
 
 1. widget.jpg
