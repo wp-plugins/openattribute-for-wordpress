@@ -5,11 +5,11 @@ Requires at least: 3.0.0
 Tested up to: 3.1
 Stable tag: 0.93
 
-Allows a user to add licensing and attribution information into a blog post / WordPress powered site. This plugin is an part of the OpenAttribute project which is part of Mozilla Drumbeat.
+Allows a user to add licensing and attribution information into a blog post / WordPress powered site. 
 
 == Description ==
 
-OpenAttribute allows you to add licensing information to your Wordpress site and individual blogs. It places information into posts and RSS feeds as well as other user friendly features.
+OpenAttribute allows you to add licensing information to your Wordpress site and individual blogs. It places information into posts and RSS feeds as well as other user friendly features. This plugin is an part of the OpenAttribute project which is part of Mozilla Drumbeat.
 
 == Installation ==
 
