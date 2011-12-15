@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: openattribute, barlas
+Contributors: OpenAttribute, pgogy, barlas
 Tags: attribution, licensing, creative commons, openattribute, mozilla, drumbeat, copyright, recognition, post, pages
 Requires at least: 3.0.0
 Tested up to: 3.2
