@@ -3,7 +3,7 @@
 Plugin Name: Open Attribute
 Plugin URI: http://openattribute.com
 OpenAttribute allows you to add licensing information to your Wordpress site and individual blogs. It places information into posts and RSS feeds as well as other user friendly features.
-Version: 0.992
+Version: 0.995
 Author: OpenAttribute, pgogy
 Author URI: http://openattribute.com
 */
@@ -450,6 +450,7 @@ function openattribute_register() {
 	add_option('openattribute_index',0);
 	add_option('openattribute_indexsingle',0);
 	add_option('openattribute_postsonly',0);
+	add_option('openattribute_postsonly',0);
 	
 }
 
@@ -477,6 +478,7 @@ function openattribute_options_page() {
 		$indexposts = get_option('openattribute_index')=='1'?"checked":"";
     	$indexsingle = get_option('openattribute_indexsingle')=='1'?"checked":"";
 		$postsonly = get_option('openattribute_postsonly')=='1'?"checked":"";
+		$altlink = get_option('openattribute_altlink');
     	
     ?><h3><a name="plugin">Attribution appearance settings</a></h3>
     <p>Here you can set settings for the plugin, these settings can be changed at anytime.</p>
@@ -502,6 +504,7 @@ function openattribute_options_page() {
     	</div>
     	<br />
     	<input type="checkbox" name="openattribute_buttonset" <?PHP echo $buttonset; ?> /> If this box is ticked, an Open Attribute "Attribute Me" button will appear on all attributed resources (pages and posts) <br />
+    	Replace the Open Attribute "Attribute Me" button with a different URL <input type="text" size="100" name="openattribute_altlink" value="<?PHP echo $altlink; ?>" /><br />
     	<input type="checkbox" name="openattribute_linkset" <?PHP echo $linkset; ?> /> If this box is ticked, an Open Attribute "Attribute Me" link will appear on all attributed resources (pages and posts) <br />
    		<input type="checkbox" name="openattribute_widgetset" <?PHP echo $widgetset; ?> /> Display attribution in the widget. In doing this the Widget can be made to appear anywhere your theme supports Widgets <br />
     	</p>
@@ -795,6 +798,16 @@ function openattribute_postform(){
 		
 		}
 		
+		if($_POST['openattribute_altlink']!=""){
+		
+			update_option('openattribute_altlink', $_POST['openattribute_altlink']);
+		
+		}else{
+		
+			update_option('openattribute_altlink', $_POST['openattribute_altlink']);
+		
+		}
+		
 		if($_POST['openattribute_postsonly']!=""){
 		
 			update_option('openattribute_postsonly', 1);
@@ -989,7 +1002,14 @@ function openattribute_add_license_content($output){
 			
 					if(get_option('openattribute_buttonset')==1){
 			    		
-			    		$license_data .= '<div onclick="attribute_button(event)" class="open_attribute_button"><img src="' . WP_PLUGIN_URL . '/' . '/openattribute-for-wordpress/' . 'attrib_button.png" /></DIV>';
+			    		$license_data .= '<div onclick="attribute_button(event)" class="open_attribute_button">';
+						
+						if(get_option("openattribute_altlink")!=""){
+							$license_data .=  '<img src="' . get_option("openattribute_altlink"). '" />';
+						}else{
+							$license_data .=  '<img src="' . WP_PLUGIN_URL . '/openattribute-for-wordpress/attrib_button.png" />';
+						}
+						$license_data .=  '</DIV>';
 			    		
 			    	}	
 			
@@ -1117,7 +1137,14 @@ function openattribute_add_license_footer($content){
 			
 						if(get_option('openattribute_buttonset')==1){
 			    		
-			    			$license_data .= '<div onclick="attribute_button(event)" class="open_attribute_button"><img src="' . WP_PLUGIN_URL . '/' . '/openattribute-for-wordpress/' . 'attrib_button.png" /></DIV>';
+			    			$license_data .= '<div onclick="attribute_button(event)" class="open_attribute_button">';
+							
+							if(get_option("openattribute_altlink")!=""){
+								$license_data .=  '<img src="' . get_option("openattribute_altlink"). '" />';
+							}else{
+								$license_data .=  '<img src="' . WP_PLUGIN_URL . '/openattribute-for-wordpress/attrib_button.png" />';
+							}
+							$license_data .=  '</DIV>';
 			    		
 			    		}
 			
